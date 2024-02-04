@@ -80,7 +80,7 @@ async def stats(_, event):
 
 async def encode(filepath, msg):
     basefilepath, extension = os.path.splitext(filepath)
-    output_filepath = basefilepath + "R136A1_Encodes" + ".mkv"
+    output_filepath = basefilepath + "HcCartoons_Encodes" + ".mkv"
     ffmpeg_code = str(ffmpeg[0])
     nam = filepath.replace("/home/runner/work/Auto-Renamer-Queue/Auto-Renamer-Queue/downloads/", " ")
     nam = nam.replace("_", " ")
@@ -102,10 +102,10 @@ async def encode(filepath, msg):
     og = og.replace("/home/runner/work/Encoder/Encoder/downloads/", "")
     try:
      await msg.edit(
-        text= "Encoding In Progress", 
+        text= "Encoding In Progress \n Processing", 
         reply_markup=InlineKeyboardMarkup(
         [
-          [InlineKeyboardButton("STATS 🏢", callback_data=f"stats{og}" )],
+          [InlineKeyboardButton("STATS ☕️", callback_data=f"stats{og}" )],
           [InlineKeyboardButton("❌ Cancel ❌", callback_data=f"cancel" )],
        ])
      )
@@ -114,7 +114,7 @@ async def encode(filepath, msg):
         text= "Encoding In Progress", 
         reply_markup=InlineKeyboardMarkup(
         [
-          [InlineKeyboardButton("STATS 🏢", callback_data=f"stats{og}" )],
+          [InlineKeyboardButton("STATS ☕️", callback_data=f"stats{og}" )],
        ])
      )
     except Exception as e:
